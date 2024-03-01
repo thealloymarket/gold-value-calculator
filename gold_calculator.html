@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gold Value Calculator</title>
+    <script>
+        function calculateValue() {
+            var pricePerOunce = document.getElementById('pricePerOunce').value;
+            var karat = document.getElementById('karat').value;
+            var weightGrams = document.getElementById('weightGrams').value;
+
+            // Convert price per ounce to price per gram
+            var pricePerGram = pricePerOunce / 31.1035;
+
+            // Calculate the purity based on karat
+            var purity = karat / 24;
+
+            // Calculate the total value
+            var totalValue = pricePerGram * purity * weightGrams;
+
+            document.getElementById('estimatedValue').innerText = 'Estimated Value: $' + totalValue.toFixed(2);
+        }
+    </script>
+</head>
+<body>
+
+<h2>Gold Value Calculator</h2>
+
+<div>
+    <label for="pricePerOunce">Price of Gold per Ounce ($):</label>
+    <input type="number" id="pricePerOunce" placeholder="Enter price per ounce">
+</div>
+
+<div>
+    <label for="karat">Gold Karat:</label>
+    <select id="karat">
+        <option value="24">24 Karat</option>
+        <option value="22">22 Karat</option>
+        <option value="18">18 Karat</option>
+        <option value="14">14 Karat</option>
+        <option value="10">10 Karat</option>
+    </select>
+</div>
+
+<div>
+    <label for="weightGrams">Weight in Grams:</label>
+    <input type="number" id="weightGrams" placeholder="Enter weight in grams">
+</div>
+
+<button onclick="calculateValue()">Calculate Value</button>
+
+<div id="estimatedValue" style="margin-top: 20px;">
+    Estimated Value: $0.00
+</div>
+
+</body>
+</html>
