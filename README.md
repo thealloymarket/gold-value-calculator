@@ -16,6 +16,11 @@ Button (CTA) Styling: The button's hover effect can be customized by changing th
 
 
 
+## Screenshots
+
+![App Screenshot](https://i.ibb.co/8D7jq61/gold-value-calculator-preview.png)
+
+
 ## Authors
 
 - [The Alloy Market](https://thealloymarket.com)
